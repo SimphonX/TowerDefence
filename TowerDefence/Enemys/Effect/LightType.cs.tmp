@@ -1,26 +1,54 @@
 using Enemys.Units;
+using System;
 
 namespace Enemys.Effect
 {
     public class LightType : TowerEffect
     {
         Unit Units;
+        Random sk = new Random();
 
         //public Unit Units1 { get => Units; set => Units = value; }
 
-        public void FreezeEffect()
+        public LightType (Unit unit)
         {
-            throw new System.NotImplementedException();
+            Units = unit;
         }
 
-        public void SlowEffect()
+        public void ElectricityEffect()
         {
-            throw new System.NotImplementedException();
+            if (sk.Next(1, 99) < 50) StunEffect();
         }
 
-        public void StunEffect()
+        public void IceEffect()
         {
-            throw new System.NotImplementedException();
+            if (sk.Next(1, 99) < 50) FreezeEffect();
+            else if(sk.Next(1, 99) < 100) SlowEffect();
+        }
+
+        public void RifleEffect()
+        {
+            if (sk.Next(1, 99) < 70) KnockBack();
+        }
+        private void StunEffect()
+        {
+            Units.Stop();
+            Console.WriteLine(Units.Name + " stuned");
+        }
+        private void SlowEffect()
+        {
+            Units.Slow();
+            Console.WriteLine(Units.Name + " slowed");
+        }
+        private void FreezeEffect()
+        {
+            Units.Stop();
+            Console.WriteLine(Units.Name + " freezed");
+        }
+        private void KnockBack()
+        {
+            Units.KnockBack();
+            Console.WriteLine(Units.Name + " knocked back");
         }
     }
 }

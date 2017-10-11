@@ -12,8 +12,8 @@ namespace Enemys
         private Deploy wave;
 
         private List<Unit> unit = new List<Unit>();
-        /*
-        public List<Unit> Unit { get => unit; set => unit = value; }
+        
+        /*public List<Unit> Unit { get => unit; set => unit = value; }
         public Deploy Wave { get => wave; set => wave = value; }*/
         private void CreateBossUnit(Unit s, IUnitBehaviour k)
         {

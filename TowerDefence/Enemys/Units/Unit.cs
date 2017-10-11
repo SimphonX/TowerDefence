@@ -43,7 +43,7 @@ namespace Enemys.Units
         public abstract void Stop();
         public abstract void Slow();
         public abstract void TakeDamage(int dmg);
-        public abstract int DropGold { get; }
+        public abstract int DropGold();
         public abstract void KnockBack();
     }
 

@@ -15,17 +15,21 @@ namespace Enemys.Units
 
         private int timer;
 
+        private int x, y;
+
         private Sound sound = new EnemyUnitSoundAdapter();
 
         IUnitBehaviour behaviour;
-        /*
-        public int HP { get => hP; set => hP = value; }
+        
+        /*public int HP { get => hP; set => hP = value; }
         public string Name { get => name; set => name = value; }
         public int Timer { get => timer; set => timer = value; }
         public int Gold { get => gold; set => gold = value; }
         public int Speed { get => speed; set => speed = value; }
         public IUnitBehaviour Behaviour { get => behaviour; set => behaviour = value; }
-        public Sound Sound { get => sound; set => sound = value; }*/
+        public Sound Sound { get => sound; set => sound = value; }
+        public int X { get => x; set => x = value; }
+        public int Y { get => y; set => y = value; }*/
 
         public void Move()
         {
@@ -36,6 +40,11 @@ namespace Enemys.Units
         {
             Behaviour.Attack();
         }
+        public abstract void Stop();
+        public abstract void Slow();
+        public abstract void TakeDamage(int dmg);
+        public abstract int DropGold();
+        public abstract void KnockBack();
     }
 
 }
