@@ -1,0 +1,25 @@
+using Enemys.Units;
+
+namespace Enemys.Effect
+{
+	public class NormalType : TowerEffect
+	{
+		Unit Units;
+
+        public void FreezeEffect(  )
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void SlowEffect(  )
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void StunEffect(  )
+        {
+            throw new System.NotImplementedException();
+        }
+    }
+	
+}

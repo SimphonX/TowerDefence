@@ -1,0 +1,16 @@
+using Enemys;
+using System;
+
+namespace Main
+{	
+	public class MainClass
+	{
+		public static void Main()
+        {
+            Console.Write("555555");
+            UnitDeployment enemyUnits = new UnitDeployment();
+            Console.ReadKey();
+        }
+	}
+	
+}

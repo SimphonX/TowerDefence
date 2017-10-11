@@ -1,0 +1,15 @@
+namespace Enemys.Units
+{
+	public class TankUnit : Unit
+	{
+        public TankUnit(  )
+        {
+            this.gold = 5;
+            this.HP = 35;
+            this.name = "Tank";
+            this.speed = 2;
+            this.timer = 1;
+        }
+    }
+	
+}

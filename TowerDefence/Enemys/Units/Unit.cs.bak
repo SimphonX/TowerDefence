@@ -1,0 +1,21 @@
+using Enemys.Units.Behavior;
+
+namespace Enemys.Units
+{
+    public abstract class Unit
+    {
+        protected int HP;
+
+        protected string name;
+
+        protected int speed;
+
+        protected int gold;
+
+        protected int timer;
+
+        IUnitBehaviour Behaviour;
+
+    }
+
+}

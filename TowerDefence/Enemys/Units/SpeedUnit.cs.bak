@@ -1,0 +1,15 @@
+namespace Enemys.Units
+{
+	public class SpeedUnit : Unit
+	{
+        public SpeedUnit(  )
+        {
+            this.gold = 5;
+            this.HP = 15;
+            this.name = "Speed";
+            this.speed = 8;
+            this.timer = 1;
+        }
+    }
+	
+}

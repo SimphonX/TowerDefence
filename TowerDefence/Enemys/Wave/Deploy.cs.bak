@@ -1,0 +1,9 @@
+namespace Enemys.Wave
+{
+	public interface Deploy
+	{
+		void CreateWave(  );
+		
+	}
+	
+}

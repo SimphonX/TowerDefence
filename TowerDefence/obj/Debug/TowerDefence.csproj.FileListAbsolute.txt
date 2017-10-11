@@ -1,0 +1,8 @@
+D:\Objektinis projektavimas\TowerDefence\TowerDefence\obj\Debug\TowerDefence.csprojResolveAssemblyReference.cache
+D:\Objektinis projektavimas\TowerDefence\TowerDefence\obj\Debug\TowerDefence.csproj.CoreCompileInputs.cache
+D:\Objektinis projektavimas\TowerDefence\TowerDefence\bin\Debug\TowerDefence.exe.config
+D:\Objektinis projektavimas\TowerDefence\TowerDefence\bin\Debug\TowerDefence.exe
+D:\Objektinis projektavimas\TowerDefence\TowerDefence\bin\Debug\TowerDefence.pdb
+D:\Objektinis projektavimas\TowerDefence\TowerDefence\obj\Debug\TowerDefence.exe
+D:\Objektinis projektavimas\TowerDefence\TowerDefence\obj\Debug\TowerDefence.pdb
+D:\Objektinis projektavimas\TowerDefence\TowerDefence\bin\Debug\CSCore.dll

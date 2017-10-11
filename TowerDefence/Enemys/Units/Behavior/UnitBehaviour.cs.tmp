@@ -1,0 +1,15 @@
+/**
+ * @(#) UnitBehaviour.cs
+ */
+
+namespace Enemys.Units.Behavior
+{
+	public interface UnitBehaviour
+	{
+		void Attack(  );
+		
+		void Move(  );
+		
+	}
+	
+}

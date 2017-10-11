@@ -1,0 +1,11 @@
+namespace Enemys.Wave
+{
+	public class NormalWave : Deploy
+    {
+        public void CreateWave(  )
+        {
+            throw new System.NotImplementedException();
+        }
+    }
+
+}

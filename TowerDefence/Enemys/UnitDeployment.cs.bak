@@ -1,0 +1,13 @@
+using Enemys.Units;
+using Enemys.Wave;
+
+namespace Enemys
+{
+	public class UnitDeployment
+    {
+
+        private Deploy wave;
+
+        private Unit unit;
+	}
+}

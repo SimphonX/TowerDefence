@@ -1,0 +1,16 @@
+using Enemys;
+
+namespace Main
+{
+	/**
+	 * @(#) Main.java
+	 */
+	
+	public class Main
+	{
+		UnitDeployment enemyUnits;
+		
+	}
+	
+}
+

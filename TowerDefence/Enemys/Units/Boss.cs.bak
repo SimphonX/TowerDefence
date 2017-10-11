@@ -1,0 +1,16 @@
+namespace Enemys.Units
+{	
+	public class Boss : Unit
+	{
+		public Boss(  )
+		{
+            this.gold = 10;
+            this.HP = 50;
+            this.name = "Boss";
+            this.speed = 3;
+            this.timer = 1;
+		}
+		
+	}
+	
+}

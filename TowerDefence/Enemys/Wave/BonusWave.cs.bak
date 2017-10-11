@@ -1,0 +1,11 @@
+namespace Enemys.Wave
+{
+	public class BonusWave : Deploy
+    {
+        public void CreateWave(  )
+        {
+            throw new System.NotImplementedException();
+        }
+    }
+
+}
