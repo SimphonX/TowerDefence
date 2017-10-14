@@ -69,6 +69,31 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Audio\EnemyUnitSoundAdapter.cs" />
     <Compile Include="Audio\Sound.cs" />
+    <Compile Include="Towers\Building\AbstractBuilding.cs" />
+    <Compile Include="Towers\Building\AbstractBuildingFactory.cs" />
+    <Compile Include="Towers\Projectile\AbstractProjectile.cs" />
+    <Compile Include="Towers\Building\AbstractTower.cs" />
+    <Compile Include="Towers\Projectile\AreaDecorator.cs" />
+    <Compile Include="Towers\Building\BuildingFactory.cs" />
+    <Compile Include="Towers\Projectile\Bullet.cs" />
+    <Compile Include="Towers\Building\Caretaker.cs" />
+    <Compile Include="Towers\Projectile\FireDecorator.cs" />
+    <Compile Include="Towers\Projectile\FrostBolt.cs" />
+    <Compile Include="Towers\Building\FrostTower.cs" />
+    <Compile Include="Towers\Projectile\LaserBolt.cs" />
+    <Compile Include="Towers\Building\LaserTower.cs" />
+    <Compile Include="Towers\Building\Level1.cs" />
+    <Compile Include="Towers\Building\Level2.cs" />
+    <Compile Include="Towers\Building\Level3.cs" />
+    <Compile Include="Towers\Building\LevelState.cs" />
+    <Compile Include="Towers\Building\Memento.cs" />
+    <Compile Include="Towers\Projectile\ProjectileDecorator.cs" />
+    <Compile Include="Towers\Building\RifleTower.cs" />
+    <Compile Include="Towers\Projectile\SlowDecorator.cs" />
+    <Compile Include="Towers\Building\TeslaTower.cs" />
+    <Compile Include="Towers\Projectile\TeslaZap.cs" />
+    <Compile Include="Towers\Building\TowerInterface.cs" />
+    <Compile Include="Towers\Building\Wall.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
