@@ -45,10 +45,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Enemys\Effect\HeavyType.cs" />
-    <Compile Include="Enemys\Effect\LightType.cs" />
-    <Compile Include="Enemys\Effect\NormalType.cs" />
-    <Compile Include="Enemys\Effect\TowerEffect.cs" />
+    <Compile Include="Enemys\Effect\Effect.cs" />
+    <Compile Include="Enemys\Effect\EffectHistory.cs" />
+    <Compile Include="Enemys\Effect\Electricityeffect.cs" />
+    <Compile Include="Enemys\Effect\IceEffect.cs" />
+    <Compile Include="Enemys\Effect\RifleEffect.cs" />
     <Compile Include="Enemys\UnitDeployment.cs" />
     <Compile Include="Enemys\Units\Behavior\AttackUnit.cs" />
     <Compile Include="Enemys\Units\Behavior\Defence.cs" />

@@ -20,10 +20,10 @@ namespace Main
             enemyUnits.Start(1);
             enemyUnits.Attack();
             Unit unit = new GoldUnit(1);
-            TowerEffect tower = new LightType(unit);
-            tower.IceEffect();
-            tower.RifleEffect();
-            tower.ElectricityEffect();
+            Effect tower = new IceEffect(unit);
+            EffectHistory hist = new EffectHistory();
+            if(tower.Execute()) hist.AddEffect();
+
         }
     }
 
