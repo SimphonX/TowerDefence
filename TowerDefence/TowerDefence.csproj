@@ -72,6 +72,7 @@
     <Compile Include="Audio\Sound.cs" />
     <Compile Include="Towers\Building\AbstractBuilding.cs" />
     <Compile Include="Towers\Building\AbstractBuildingFactory.cs" />
+    <Compile Include="Towers\Building\BuildingInterface.cs" />
     <Compile Include="Towers\Projectile\AbstractProjectile.cs" />
     <Compile Include="Towers\Building\AbstractTower.cs" />
     <Compile Include="Towers\Projectile\AreaDecorator.cs" />

@@ -6,7 +6,7 @@ namespace towers_classes
 {
 	public class Caretaker
 	{
-		Memento memento;
+		Memento[] memento;
 		
 	}
 	
