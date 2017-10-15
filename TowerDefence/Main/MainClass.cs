@@ -19,16 +19,12 @@ namespace Main
             enemyUnits.Wave = new NormalWave();
             enemyUnits.Start(1);
             enemyUnits.Attack();
-<<<<<<< HEAD
             Unit unit = new GoldUnit(1);
             Effect tower = new IceEffect(unit);
             EffectHistory hist = new EffectHistory();
-            if(tower.Execute()) hist.AddEffect();
-
-=======
+            //if(tower.Execute()) hist.AddEffect();
             //setup();
             Console.ReadKey();
->>>>>>> master
         }
         public static void setup()
         {
