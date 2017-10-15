@@ -22,7 +22,8 @@ namespace Main
             Unit unit = new GoldUnit(1);
             Effect tower = new IceEffect(unit);
             EffectHistory hist = new EffectHistory();
-            //if(tower.Execute()) hist.AddEffect();
+            if(tower.Execute()) hist.AddEffect(tower);
+            hist.UndoEffect();
             //setup();
             Console.ReadKey();
         }

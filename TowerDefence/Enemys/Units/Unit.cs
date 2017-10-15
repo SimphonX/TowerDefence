@@ -40,11 +40,11 @@ namespace Enemys.Units
         {
             Behaviour.Attack();
         }
-        public abstract void Stop();
-        public abstract void Slow();
+        public abstract bool Stop();
+        public abstract bool Slow();
         public abstract void TakeDamage(int dmg);
         public abstract int DropGold();
-        public abstract void KnockBack();
+        public abstract bool KnockBack();
     }
 
 }

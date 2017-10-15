@@ -14,11 +14,7 @@ namespace Enemys.Effect
 
         public override bool Execute()
         {
-            throw new System.NotImplementedException();
-        }
-
-        public bool Undo()
-        {
+            Unit.KnockBack();
             return false;
         }
 

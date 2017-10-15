@@ -8,18 +8,17 @@ namespace Enemys.Effect
 {
 	public abstract class Effect
 	{
-		Enemys.Units.Unit unitHist;
-
-        public Effect(Unit unitHist)
+		Unit unit;
+        public Unit Unit { get => unit; set => unit = value; }
+        public Effect(Unit unit)
         {
-            this.unitHist = unitHist;
+            this.unit = unit;
         }
 
         public abstract bool Execute(  );
 		
-		public bool Undo(  )
+		public virtual void Undo(  )
 		{
-            return false;
 		}
 		
 	}

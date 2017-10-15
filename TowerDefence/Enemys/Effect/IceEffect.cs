@@ -8,18 +8,21 @@ namespace Enemys.Effect
 {
 	public class IceEffect : Effect
 	{
+        int copy;
         public IceEffect(Unit unitHist) : base(unitHist)
         {
         }
 
         public override bool Execute()
         {
-            throw new System.NotImplementedException();
+            copy = Unit.Speed;
+            return Unit.Slow();
         }
 
-        public bool Undo()
+        public override void Undo()
         {
-            return false;
+            Unit.Speed = copy;
+            System.Console.WriteLine("Speed restore to " + Unit.Speed);
         }
 
     }
