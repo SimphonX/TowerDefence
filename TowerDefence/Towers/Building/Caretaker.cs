@@ -6,8 +6,12 @@ namespace towers_classes
 {
 	public class Caretaker
 	{
-		Memento[] memento;
-		
+        Memento memento;
+        public Memento Memento
+        {
+            get { return memento; }
+            set { memento = value; }
+        }
 	}
 	
 }

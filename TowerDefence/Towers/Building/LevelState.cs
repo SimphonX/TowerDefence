@@ -4,8 +4,9 @@
 
 namespace towers_classes
 {
-	public class LevelState
+	public abstract class LevelState
 	{
+        public abstract void Handle(AbstractTower tower);
 	}
 	
 }

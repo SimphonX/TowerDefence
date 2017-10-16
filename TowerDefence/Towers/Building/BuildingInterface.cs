@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace towers_classes
 {
-    interface BuildingInterface
+    public interface BuildingInterface
     {
         void Damage(int value);
         void Repair(int value);

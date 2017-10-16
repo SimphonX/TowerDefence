@@ -6,16 +6,16 @@ namespace towers_classes
 {
 	public class Memento
 	{
-		int state;
+		private LevelState state;
 		
-		public void setState(  )
+		public void setState( LevelState state )
 		{
-			
+            this.state = state;
 		}
 		
-		public void getState(  )
+		public LevelState getState(  )
 		{
-			
+            return state;
 		}
 		
 	}

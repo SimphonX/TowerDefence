@@ -4,19 +4,17 @@
 
 namespace towers_classes
 {
-	public abstract class AbstractBuilding : BuildingInterface
+	public abstract class AbstractBuilding : ExistingItem, BuildingInterface
 	{
-		int x;
-		
-		int y;
+        int cost;
 		
 		int health;
 
         int maxHealth;
 
-        public AbstractBuilding(int x, int y, int maxHealth)
+        public AbstractBuilding(int x, int y, int maxHealth, int cost):base(x,y)
         {
-            this.x = x; this.y = y; this.maxHealth = maxHealth; health = maxHealth;
+            this.maxHealth = maxHealth; health = maxHealth; this.cost = cost;
         }
 
         public void Damage(int value)
