@@ -18,9 +18,16 @@ namespace towers_classes
 		
 		int velocity;
 
-        public AbstractProjectile(int x, int y, int tx, int ty) : base(x, y)
+        string effect { get; set; }
+
+        public AbstractProjectile(int x, int y, int tx, int ty, string effect) : base(x, y)
         {
-            this.start_x = x; this.start_y = y; this.target_x = tx; this.target_y = ty;
+            this.start_x = x; this.start_y = y; this.target_x = tx; this.target_y = ty; this.effect = effect;
+        }
+
+        public string getEffects()
+        {
+            return effect;
         }
     }
 	

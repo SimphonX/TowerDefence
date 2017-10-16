@@ -56,32 +56,33 @@ namespace TowerDefence.Main
             return result;
         }
 
-        public string[] drawGrid()//returns map in lines
+        public string[,] drawGrid(int x, int y)//returns map in lines
         {
-            string[] arr = new string[grid.GetLength(0)];
+            string[,] arr = new string[grid.GetLength(0),grid.GetLength(1)];
             for (int i = 0; i < grid.GetLength(0); i++)
             {
                 for (int ii = 0; ii < grid.GetLength(1); ii++)
                 {
-                    if (grid[i, ii] != null)//if that element is initialized
+                    if (ii == y && i == x)
+                    {
+                        arr[i,ii] = "X";
+                    }
+                    else if (grid[i, ii] != null)//if that element is initialized
                     {
                         string letter = "";
                         if(itemDictionary.TryGetValue(grid[i,ii].GetType().Name,out letter))//if it has an entry in dictionary
                         {
-                            arr[i] += letter;
+                            arr[i,ii] = letter;
                         }
                         else
                         {
-                            arr[i] += " ";
-                        }
-                        
+                            arr[i,ii] = " ";
+                        }                        
                     }
                     else
                     {
-
-                        arr[i] += " ";
-                    }
-                        
+                        arr[i,ii] = " ";
+                    }                        
                 }
             }
             return arr;
