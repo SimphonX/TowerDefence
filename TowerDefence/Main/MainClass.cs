@@ -3,6 +3,7 @@ using System;
 using Enemys.Wave;
 using Enemys.Effect;
 using Enemys.Units;
+using TowerDefence.Minions;
 
 namespace Main
 {
