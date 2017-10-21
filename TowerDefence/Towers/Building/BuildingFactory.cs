@@ -22,20 +22,20 @@ namespace towers_classes
             return instance;
         }
 
-        public override AbstractBuilding createBuilding( string type )
+        public override AbstractBuilding createBuilding( string type, int x, int y )
 		{
             switch (type)
             {
                 case "wall":
-                    return new Wall();
+                    return new Wall(x,y);
                 case "rifle":
-                    return new RifleTower();
+                    return new RifleTower(x,y);
                 case "frost":
-                    return new FrostTower();
+                    return new FrostTower(x,y);
                 case "laser":
-                    return new LaserTower();
+                    return new LaserTower(x,y);
                 case "tesla":
-                    return new TeslaTower();
+                    return new TeslaTower(x,y);
                 default:
                     return null;
             }
