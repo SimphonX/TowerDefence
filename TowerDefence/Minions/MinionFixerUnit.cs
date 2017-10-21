@@ -1,39 +1,52 @@
 
 
 using System;
+using TowerDefence.Minions;
 /**
 * @(#) MinionFixerUnit.cs
 */
 public class MinionFixerUnit : AbstractCloneableMinion
 {
 
-    private int lifepoints;
+    private MinionFixerBoss Boss;
 
-    private string status;
-    private String name;
-
-
-    private MinionLeader IsControlledBy2;
-	
-	public bool fixTower( int x, int y )
+    public bool fixTower(string command, int x=0, int y=0 )
 	{
-		return true;
+        if(command=="StartFixing")
+        Console.WriteLine("["+this.name+"]"+DateTime.Now.ToString()+":" + " Started fixing at x: "+x.ToString()+" y: "+y.ToString() );
+
+        return true;
 	}
 	
-	internal MinionFixerUnit( string name, int lifepoints, string status )
+	public MinionFixerUnit( string name, int lifepoints, string status, MinionFixerBoss ml )
 	{
-		
-	}
+        setName(name);
+        setLifepoints(lifepoints);
+        SetStatus(status);
+        setMinionLeader(ml);
+ 
+    }
    
 
     public override void receiveCommand(string command)
     {
-        throw new NotImplementedException();
+        Console.WriteLine("["+this.name + "]" + DateTime.Now.ToString() + ":" + " received command : " +command);
+        SetStatus(command);
+        switch(command)
+        {
+                case "StartFixing":
+                fixTower(command);
+                break;
+
+                case "FinishWork":
+                dismiss();
+                break;
+        }
     }
 
     public override void dismiss()
     {
-        throw new NotImplementedException();
+        Console.WriteLine("["+this.name + "]" + DateTime.Now.ToString() + ":" + " finishing my job");
     }
 
     public override string getName()
@@ -54,6 +67,7 @@ public class MinionFixerUnit : AbstractCloneableMinion
     public override void setName(string namex)
     {
         name = namex;
+        Console.WriteLine("Hello my name is " + this.name + " I am fixer, my status is " + this.status);
     }
 
     public override void setLifepoints(int points)
@@ -68,22 +82,16 @@ public class MinionFixerUnit : AbstractCloneableMinion
 
     public override void respawn(int x, int y)
     {
-        throw new NotImplementedException();
+        Console.WriteLine("["+this.name + "]" + DateTime.Now.ToString() + ":" + "  respawning ");
+        this.setLifepoints(100);
+        this.SetStatus("Ready");
     }
 
-    public override int getPositionX()
+
+    public override void setMinionLeader(AbstractMinionLeader minionLeader)
     {
-        throw new NotImplementedException();
+        Boss = (MinionFixerBoss)minionLeader;
+        Console.WriteLine("[" + this.name+"]" + DateTime.Now.ToString() + ":" + "  my boss is " +Boss.getName());
     }
 
-    public override void setMinionLeader(MinionLeader minionLeader)
-    {
-        IsControlledBy2 = minionLeader;
-    }
-
-
-    public override AbstractCloneableMinion Clone()
-    {
-        return (MinionFixerUnit)this.MemberwiseClone();
-    }
 }

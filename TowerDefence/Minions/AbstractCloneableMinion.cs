@@ -4,15 +4,16 @@ using System;
 /**
 * @(#) AbstractCloneableMinion.cs
 */
-public abstract class AbstractCloneableMinion : MinionPosition, ICloneable, IMinion
+public abstract class AbstractCloneableMinion : AbstractMinionPosition, ICloneable, IMinion
 {
-	String name;
-	
-	int lifepoints;
-	
-	String status;
 
-    public abstract AbstractCloneableMinion Clone();
+    protected String name;
+
+    protected int lifepoints=100;
+
+    protected String status="Ready";
+
+    protected int respawntime=10;
 
 
     public abstract void dismiss();
@@ -32,18 +33,19 @@ public abstract class AbstractCloneableMinion : MinionPosition, ICloneable, IMin
 
     public abstract void respawn(int x, int y);
 
-    public abstract int getPositionX();
+    public AbstractCloneableMinion createClone()
+    {
+        Console.WriteLine("Creating minion Clone");
+        return (AbstractCloneableMinion)this.MemberwiseClone();
+    }
+
+    public abstract void setMinionLeader(AbstractMinionLeader minionLeader);
 
 
-
-    public abstract void setMinionLeader(MinionLeader minionLeader);
-
-
+    public abstract void receiveCommand(string command);
 
     object ICloneable.Clone()
     {
-        throw new NotImplementedException();
+        return (AbstractCloneableMinion)this.MemberwiseClone();
     }
-
-    public abstract void receiveCommand(string command);
 }

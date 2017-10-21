@@ -1,0 +1,52 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace TowerDefence.Minions
+{
+    public class MinionFixerBoss : AbstractMinionLeader
+    {
+
+        public static MinionFixerBoss instance;
+        private MinionFixerBoss() { name = "LarryFixerBoss"; lifepoints = 1000; minions = new List<AbstractCloneableMinion>(); }
+        public override void addMinion(AbstractCloneableMinion m)
+        {
+            minions.Add((MinionFixerUnit)m);
+        }
+
+        public override void notify()
+        {
+            int tower = getTowerWithLeastLp();
+            foreach (MinionFixerUnit m in minions)
+            {
+                m.receiveCommand("StartFixing");
+            }
+
+        }
+
+        public override void removeMinion(AbstractCloneableMinion m)
+        {
+            minions.Remove((MinionFixerUnit)m);
+        }
+        public static MinionFixerBoss getInstance()
+        {
+
+            {
+                if (instance == null)
+                {
+                    instance = new MinionFixerBoss();
+                }
+                return instance;
+            }
+        }
+
+        public override int getTowerWithLeastLp()
+        {
+            int[] x = new int[] { 100, 64, 50, 60, 70 };
+            int s = x.Min();
+            return s;
+        }
+    }
+}

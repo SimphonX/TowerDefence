@@ -4,7 +4,7 @@
 
 public interface IMinion
 {
-	void setMinionLeader( MinionLeader minionLeader );
+	void setMinionLeader( AbstractMinionLeader minionLeader );
 	
 	void receiveCommand( string command );
 	
