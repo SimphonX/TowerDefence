@@ -6,11 +6,11 @@ namespace towers_classes
 {
 	public abstract class AbstractBuilding : ExistingItem, BuildingInterface
 	{
-        int cost;
-		
-		int health;
+        protected int cost;
 
-        int maxHealth;
+        protected int health;
+
+        protected int maxHealth;
 
         public AbstractBuilding(int x, int y, int maxHealth, int cost):base(x,y)
         {

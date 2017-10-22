@@ -9,8 +9,8 @@ namespace towers_classes
     public class ExistingItem
     {
         //always shows current location
-        private int x;
-        private int y;
+        protected int x;
+        protected int y;
         public ExistingItem(int x, int y)
         {
             this.x = x; this.y = y;

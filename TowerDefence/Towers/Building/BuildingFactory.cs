@@ -1,7 +1,9 @@
-/**
- * @(#) BuildingFactory.cs
- */
 
+
+using System;
+/**
+* @(#) BuildingFactory.cs
+*/
 namespace towers_classes
 {
 	public class BuildingFactory : AbstractBuildingFactory
@@ -10,10 +12,10 @@ namespace towers_classes
 		
 		public BuildingFactory(  )
 		{
-			
+            Console.WriteLine("New building factory created");
 		}
 		
-		public BuildingFactory getInstance(  )
+		public static BuildingFactory getInstance(  )
 		{
             if (instance == null)
             {
@@ -40,6 +42,23 @@ namespace towers_classes
                     return null;
             }
 		}
+
+        public override AbstractTower createTower(string type, int x, int y)
+        {
+            switch (type)
+            {
+                case "rifle":
+                    return new RifleTower(x, y);
+                case "frost":
+                    return new FrostTower(x, y);
+                case "laser":
+                    return new LaserTower(x, y);
+                case "tesla":
+                    return new TeslaTower(x, y);
+                default:
+                    return null;
+            }
+        }
     }
 	
 }

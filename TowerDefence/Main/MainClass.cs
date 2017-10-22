@@ -4,21 +4,24 @@ using Enemys.Wave;
 using Enemys.Effect;
 using Enemys.Units;
 using TowerDefence.Minions;
+using TowerDefence.Main;
 
 namespace Main
 {
     public class MainClass
     {
-		 static MinionDecoyBoss JerryBoss = MinionDecoyBoss.getInstance();  //Sukuriam defenderių bosą
-       static MinionFixerBoss LarryBoss = MinionFixerBoss.getInstance();  //Sukuriam fixerių bosą
-	   
+        static MinionDecoyBoss JerryBoss = MinionDecoyBoss.getInstance();  //Sukuriam defenderių bosą
+        static MinionFixerBoss LarryBoss = MinionFixerBoss.getInstance();  //Sukuriam fixerių bosą
+
         private static UnitDeployment enemyUnits = new UnitDeployment();
         public static void Main()
         {
-          MinionFixersDoSmthng();
+            MinionFixersDoSmthng();
             MinionDecoysDefend();
-			 Console.ReadKey();
+            Console.ReadKey();
             Enemy();
+            Console.ReadKey();
+            TowersDemo.run();
             Console.ReadKey();
         }
         public static void Enemy()
@@ -29,14 +32,13 @@ namespace Main
             Unit unit = new GoldUnit(1);
             Effect tower = new IceEffect(unit);
             EffectHistory hist = new EffectHistory();
-            if(tower.Execute()) hist.AddEffect(tower);
+            if (tower.Execute()) hist.AddEffect(tower);
             hist.UndoEffect();
-            //setup();
         }
-		 public static void MinionFixersDoSmthng()
+        public static void MinionFixersDoSmthng()
         {
-            MinionFixerUnit fixer = new MinionFixerUnit("MinionFixer_Nr1",100,"Ready", LarryBoss);
-            MinionFixerUnit fixerClone=(MinionFixerUnit)fixer.createClone();
+            MinionFixerUnit fixer = new MinionFixerUnit("MinionFixer_Nr1", 100, "Ready", LarryBoss);
+            MinionFixerUnit fixerClone = (MinionFixerUnit)fixer.createClone();
             fixerClone.setName("FixerCloneNr1");
             MinionFixerUnit fixerClone2 = (MinionFixerUnit)fixer.createClone();
             fixerClone2.setName("FixerCloneNr2");
@@ -64,54 +66,5 @@ namespace Main
             JerryBoss.notify();
 
         }
-        public static void setup()
-        {
-            Console.SetWindowSize(201, 50);
-            Console.CursorVisible = false;
-            run();
-        }
-        public static void run()
-        {
-            string s = MakeScreen(CreateGrid(50, 200, 's'));
-            //Console.Clear();
-            Console.Write(s);
-            System.Threading.Thread.Sleep(500);
-            run();
-        }
-        public static string MakeScreen(string [,] grid)
-        {
-            string[] arr = new string[grid.GetLength(0)];
-            for(int i = 0; i < arr.Length; i++)
-            {
-                for(int ii = 0; ii< grid.GetLength(1); ii++)
-                {
-                    arr[i] += grid[i, ii];
-                }
-                arr[i] += '\n';
-            }
-            return String.Join("",arr);
-        }
-
-        public static string[,] CreateGrid(int h, int w, char s)
-        {
-            string[,] grid = new string[h, w];
-            for (int i = 0; i < grid.GetLength(0); i++)
-            {
-                for (int ii = 0; ii < grid.GetLength(1); ii++)
-                {
-                    if (ii % 5 == 0)
-                    {
-                        grid[i, ii] = ((char)186).ToString();
-                    }
-                    else
-                    {
-                        grid[i, ii] = s.ToString();
-                    }
-
-                }
-            }
-            return grid;
-        }
     }
-
 }

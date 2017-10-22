@@ -1,34 +1,38 @@
 
 
+using System;
 using System.Collections.Generic;
 /**
 * @(#) ProjectileDecorator.cs
 */
 namespace towers_classes
 {
-	public class ProjectileDecorator : AbstractProjectile
+	public abstract class ProjectileDecorator : AbstractProjectileContainer
 	{
-		AbstractProjectile projectile;
+        AbstractProjectileContainer projectile;
 
-        public ProjectileDecorator(int x, int y, int tx, int ty, string effect) : base(x, y, tx, ty, effect)
+        public ProjectileDecorator(int x, int y) : base(x, y)
         {
         }
 
-        public void setProjectile(AbstractProjectile projectile)
+        public void setProjectile(AbstractProjectileContainer projectile)
         {
             this.projectile = projectile;
         }
 
-        public List<string> getEffectList()
+        public override string[] getEffects()
         {
-            List<string> eff = new List<string>();
+            string[] effects = new string[0];
+
             if (projectile != null)
             {
-                eff.Add(projectile.getEffects());
+                effects = this.projectile.getEffects();
             }
-            eff.Add(base.getEffects());
-            return eff;
+            return effects;
         }
-    }
-	
+        public override bool updateLocation()
+        {
+            return projectile.updateLocation();
+        }
+    }	
 }

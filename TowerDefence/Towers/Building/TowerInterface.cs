@@ -6,8 +6,8 @@ namespace towers_classes
 {
 	public interface TowerInterface
 	{
-		void fire( int x, int y );
-		
+        AbstractProjectileContainer fire( int x, int y );
+        void upgrade();
 	}
 	
 }

@@ -66,6 +66,7 @@
     <Compile Include="Enemys\Wave\BossWave.cs" />
     <Compile Include="Enemys\Wave\Deploy.cs" />
     <Compile Include="Enemys\Wave\NormalWave.cs" />
+    <Compile Include="Main\TowersDemo.cs" />
     <Compile Include="Main\View\Cursor.cs" />
     <Compile Include="Main\View\Grid.cs" />
     <Compile Include="Main\View\UI.cs" />
@@ -89,6 +90,7 @@
     <Compile Include="Towers\ExistingItem.cs" />
     <Compile Include="Towers\Projectile\AbstractProjectile.cs" />
     <Compile Include="Towers\Building\AbstractTower.cs" />
+    <Compile Include="Towers\Projectile\AbstractProjectileContainer.cs" />
     <Compile Include="Towers\Projectile\AreaDecorator.cs" />
     <Compile Include="Towers\Building\BuildingFactory.cs" />
     <Compile Include="Towers\Projectile\Bullet.cs" />

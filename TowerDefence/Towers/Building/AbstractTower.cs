@@ -1,41 +1,31 @@
-/**
- * @(#) AbstractTower.cs
- */
 
+
+using System;
+/**
+* @(#) AbstractTower.cs
+*/
 namespace towers_classes
 {
 	public abstract class AbstractTower : AbstractBuilding, TowerInterface
 	{
-		private int id;
-		
-		private string description;
-		
-		private int cost;
-		
-		private int damage;
-		
-		private LevelState state;
+        protected int id;
+
+        protected string description;
+
+        protected int cost;
+
+        protected int damage;
+
+        protected LevelState state;
 
         public AbstractTower(int x, int y, int maxHealth, int cost) : base(x,y,maxHealth,cost)
         {
             this.state = new Level1();
         }
 
-        public void fire( int x, int y )
-		{
-            if (state.GetType().Name == "Level1")
-            {
+        public abstract AbstractProjectileContainer fire(int x, int y);
 
-            }
-            else if (state.GetType().Name == "Level2")
-            {
-
-            }
-            else
-            {
-
-            }
-		}
+        public abstract AbstractProjectileContainer prepareShot(int tx, int ty, int dmg);
 
         public LevelState LevelState
         {
@@ -45,7 +35,6 @@ namespace towers_classes
                 state = value;
             }
         }
-		
 		public Memento createMemento(  )
 		{
 			return null;
@@ -53,9 +42,23 @@ namespace towers_classes
 		
 		public void setMemento( Memento memento )
 		{
-			
+            state = memento.getState();
 		}
-		
-	}
+
+        public void upgrade()
+        {
+            switch (state.GetType().Name)
+            {
+                case "Level1":
+                    Console.WriteLine(this.GetType().Name + " upgraded to: Level 2");
+                    state = new Level2();
+                    break;
+                case "Level2":
+                    Console.WriteLine(this.GetType().Name + " upgraded to: Level 3");
+                    state = new Level3();
+                    break;
+            }
+        }
+    }
 	
 }
