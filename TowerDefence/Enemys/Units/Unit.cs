@@ -1,5 +1,6 @@
 using Enemys.Units.Behavior;
 using Audio;
+using System.IO;
 
 namespace Enemys.Units
 {
@@ -17,7 +18,7 @@ namespace Enemys.Units
 
         private int x, y;
 
-        private Sound sound = new EnemyUnitSoundAdapter();
+        private Sound sound = new EnemyUnitSoundAdapter(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName+"\\Resurses\\hit.mp3");
 
         IUnitBehaviour behaviour;
         
@@ -38,6 +39,7 @@ namespace Enemys.Units
 
         public void Attack()
         {
+            Sound.PlaySound();
             Behaviour.Attack();
         }
         public abstract bool Stop();

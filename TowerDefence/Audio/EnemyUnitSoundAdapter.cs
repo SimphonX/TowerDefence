@@ -9,21 +9,25 @@ namespace Audio
     {
         IWaveSource soundSource;
         ISoundOut soundOut;
+        string audioFile;
+
+        public EnemyUnitSoundAdapter(string audioFile)
+        {
+            System.Console.WriteLine(audioFile);
+            this.audioFile = audioFile;
+        }
+
         public void PlaySound()
         {
             using (soundSource = GetSoundSource())
             {
-                //SoundOut implementation which plays the sound
                 using (soundOut = GetSoundOut())
                 {
-                    //Tell the SoundOut which sound it has to play
                     soundOut.Initialize(soundSource);
-                    //Play the sound
                     soundOut.Play();
 
-                    Thread.Sleep(2000);
-
-                    //Stop the playback
+                    Thread.Sleep(500);
+                    
                     soundOut.Stop();
                 }
             }
@@ -37,8 +41,7 @@ namespace Audio
         }
         private IWaveSource GetSoundSource()
         {
-            //return any source ... in this example, we'll just play a mp3 file
-            return CodecFactory.Instance.GetCodec(@"C:\Temp\sound.mp3");
+            return CodecFactory.Instance.GetCodec(audioFile);
         }
     }
 }
