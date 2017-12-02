@@ -1,6 +1,7 @@
 
 
 using System;
+using System.Collections.Generic;
 /**
 * @(#) AbstractCloneableMinion.cs
 */
@@ -15,9 +16,17 @@ public abstract class AbstractCloneableMinion : AbstractMinionPosition, ICloneab
 
     protected int respawntime=10;
 
-
+    protected List<string> attributes = new List<string>();
     public abstract void dismiss();
 
+    public void addAtribute(string attribute)
+    {
+        attributes.Add(attribute);
+    }
+    public List<string> getAtributes()
+    {
+        return attributes;
+    }
 
     public abstract String getName();
 
