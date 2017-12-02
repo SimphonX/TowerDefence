@@ -12,7 +12,10 @@ namespace TowerDefence.Minions
         private MinionDecoyBoss() { name = "JerryDecoyBoss"; lifepoints = 1000; minions = new List<AbstractCloneableMinion>(); }
         public override void addMinion(AbstractCloneableMinion m)
         {
-            minions.Add(m);
+            if (m != null)
+                minions.Add(m);
+            else
+                minions.Add(new NullObjectMinion());
         }
 
         public override void removeMinion(AbstractCloneableMinion M)
@@ -25,7 +28,9 @@ namespace TowerDefence.Minions
 
             foreach (AbstractCloneableMinion m in minions)
             {
+                if(m!=null)
                 m.receiveCommand("StartDefending");
+              
             }
         }
 

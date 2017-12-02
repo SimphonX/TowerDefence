@@ -13,7 +13,9 @@ namespace TowerDefence.Minions
         private MinionFixerBoss() { name = "LarryFixerBoss"; lifepoints = 1000; minions = new List<AbstractCloneableMinion>(); }
         public override void addMinion(AbstractCloneableMinion m)
         {
+            if(m!=null)
             minions.Add((MinionFixerUnit)m);
+            else { minions.Add(new NullObjectMinion()); }
         }
 
         public override void notify()
