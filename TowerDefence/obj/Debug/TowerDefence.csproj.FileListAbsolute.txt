@@ -21,3 +21,10 @@ C:\4 kursas\TowerDefense\TowerDefence\TowerDefence\bin\Debug\CSCore.dll
 C:\4 kursas\TowerDefense\TowerDefence\TowerDefence\obj\Debug\TowerDefence.csprojResolveAssemblyReference.cache
 C:\4 kursas\TowerDefense\TowerDefence\TowerDefence\obj\Debug\TowerDefence.exe
 C:\4 kursas\TowerDefense\TowerDefence\TowerDefence\obj\Debug\TowerDefence.pdb
+C:\4 kursas\newDP\TowerDefence\TowerDefence\bin\Debug\TowerDefence.exe.config
+C:\4 kursas\newDP\TowerDefence\TowerDefence\bin\Debug\TowerDefence.exe
+C:\4 kursas\newDP\TowerDefence\TowerDefence\bin\Debug\TowerDefence.pdb
+C:\4 kursas\newDP\TowerDefence\TowerDefence\bin\Debug\CSCore.dll
+C:\4 kursas\newDP\TowerDefence\TowerDefence\obj\Debug\TowerDefence.csprojResolveAssemblyReference.cache
+C:\4 kursas\newDP\TowerDefence\TowerDefence\obj\Debug\TowerDefence.exe
+C:\4 kursas\newDP\TowerDefence\TowerDefence\obj\Debug\TowerDefence.pdb

@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 
 namespace Enemys.Units
 {	
@@ -12,7 +13,9 @@ namespace Enemys.Units
             this.Name = "Boss";
             this.Speed = 3;
             this.Timer = 1;
-		}
+            System.Console.WriteLine();
+
+        }
         public override bool Stop()
         {
             if (ran.Next(1, 99) > 30) return false;

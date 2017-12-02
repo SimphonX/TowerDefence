@@ -26,7 +26,7 @@ public class MinionStandingDecoyUnit : AbstractCloneableMinion
 
     public override void dismiss()
     {
-        throw new NotImplementedException();
+        Console.WriteLine("[" + this.name + "]" + DateTime.Now.ToString() + ":" + " finishing my job");
     }
 
     public override string getName()
