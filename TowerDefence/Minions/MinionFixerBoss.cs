@@ -10,7 +10,8 @@ namespace TowerDefence.Minions
     {
 
         public static MinionFixerBoss instance;
-        private MinionFixerBoss() { name = "LarryFixerBoss"; lifepoints = 1000; minions = new List<AbstractCloneableMinion>(); }
+        private MinionFixerBoss() { name = "LarryFixerBoss"; lifepoints = 1000;
+            minions = new MinionRepository(); }
         public override void addMinion(AbstractCloneableMinion m)
         {
             if(m!=null)
@@ -21,10 +22,12 @@ namespace TowerDefence.Minions
         public override void notify()
         {
             int tower = getTowerWithLeastLp();
-            foreach (MinionFixerUnit m in minions)
+            for (Iterator iter = minions.getIterator(); iter.hasNext();)
             {
+                MinionFixerUnit m = (MinionFixerUnit)iter.next();
                 m.receiveCommand("StartFixing");
             }
+          
 
         }
 

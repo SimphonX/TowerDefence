@@ -9,7 +9,8 @@ namespace TowerDefence.Minions
     public class MinionDecoyBoss : AbstractMinionLeader
     {
         public static MinionDecoyBoss instance;
-        private MinionDecoyBoss() { name = "JerryDecoyBoss"; lifepoints = 1000; minions = new List<AbstractCloneableMinion>(); }
+        private MinionDecoyBoss() { name = "JerryDecoyBoss"; lifepoints = 1000;
+            minions = new MinionRepository(); }
         public override void addMinion(AbstractCloneableMinion m)
         {
             if (m != null)
@@ -25,13 +26,12 @@ namespace TowerDefence.Minions
 
         public override void notify()
         {
-
-            foreach (AbstractCloneableMinion m in minions)
+            for(Iterator iter=minions.getIterator();iter.hasNext();)
             {
-                if(m!=null)
+                AbstractCloneableMinion m = (AbstractCloneableMinion)iter.next();
                 m.receiveCommand("StartDefending");
-              
             }
+
         }
 
         public static MinionDecoyBoss getInstance()

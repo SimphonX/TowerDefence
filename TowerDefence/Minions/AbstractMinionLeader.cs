@@ -1,6 +1,7 @@
 
 
 using System.Collections.Generic;
+using TowerDefence.Minions;
 using towers_classes;
 /**
 * @(#) MinionLeader.cs
@@ -9,7 +10,7 @@ public abstract class AbstractMinionLeader : AbstractMinionPosition
 {
     protected string name;
 
-    protected List<AbstractCloneableMinion> minions;
+    protected MinionRepository minions;
 
     protected int lifepoints;
 
