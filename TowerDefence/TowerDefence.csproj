@@ -95,6 +95,7 @@
     <Compile Include="Towers\Building\AbstractBuilding.cs" />
     <Compile Include="Towers\Building\AbstractBuildingFactory.cs" />
     <Compile Include="Towers\Building\BuildingInterface.cs" />
+    <Compile Include="Towers\Building\Destroyed.cs" />
     <Compile Include="Towers\ExistingItem.cs" />
     <Compile Include="Towers\Projectile\AbstractProjectile.cs" />
     <Compile Include="Towers\Building\AbstractTower.cs" />

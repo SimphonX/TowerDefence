@@ -1,21 +1,25 @@
-/**
- * @(#) Memento.cs
- */
 
+
+using System;
+/**
+* @(#) Memento.cs
+*/
 namespace towers_classes
 {
 	public class Memento
 	{
+        private AbstractTower tower;
 		private LevelState state;
 		
-		public void setState( LevelState state )
-		{
-            this.state = state;
-		}
+        public Memento( AbstractTower tower, LevelState state)
+        {
+            this.tower = tower; this.state = state;
+        }
 		
-		public LevelState getState(  )
+		public void restore(  )
 		{
-            return state;
+            Console.WriteLine(this.tower.GetType().Name + " is being restored to backed up state which is " + this.state.GetType().Name);
+            tower.setState(state);
 		}
 		
 	}

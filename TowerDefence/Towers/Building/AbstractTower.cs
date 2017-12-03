@@ -20,7 +20,7 @@ namespace towers_classes
 
         public AbstractTower(int x, int y, int maxHealth, int cost) : base(x,y,maxHealth,cost)
         {
-            this.state = new Level1();
+            this.state = new Level1(this);
         }
 
         public abstract AbstractProjectileContainer fire(int x, int y);
@@ -30,34 +30,34 @@ namespace towers_classes
         public LevelState LevelState
         {
             get { return state; }
-            set
-            {
-                state = value;
-            }
+            set { state = value; }
         }
-		public Memento createMemento(  )
-		{
-			return null;
-		}
-		
-		public void setMemento( Memento memento )
-		{
-            state = memento.getState();
-		}
+
+        public Memento backupState()
+        {
+            Console.WriteLine(this.GetType().Name + " is saving previous state as a memento");
+            return new Memento(this, state);
+        }
+
+        public void setState(LevelState state)
+        {
+            this.state = state;
+        }
 
         public void upgrade()
         {
-            switch (state.GetType().Name)
-            {
-                case "Level1":
-                    Console.WriteLine(this.GetType().Name + " upgraded to: Level 2");
-                    state = new Level2();
-                    break;
-                case "Level2":
-                    Console.WriteLine(this.GetType().Name + " upgraded to: Level 3");
-                    state = new Level3();
-                    break;
-            }
+            this.state = this.state.upgrade();
+        }
+
+        public int getDamage()
+        {
+            return damage;
+        }
+
+        public void destroy()
+        {
+            Console.WriteLine(this.GetType().Name+" is being destroyed");
+            state = new Destroyed(this);
         }
     }
 	
