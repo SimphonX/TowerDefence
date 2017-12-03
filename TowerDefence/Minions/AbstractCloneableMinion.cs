@@ -1,7 +1,9 @@
 
 
 using System;
+
 using System.Collections.Generic;
+using TowerDefence.Minions;
 /**
 * @(#) AbstractCloneableMinion.cs
 */
@@ -16,8 +18,24 @@ public abstract class AbstractCloneableMinion : AbstractMinionPosition, ICloneab
 
     protected int respawntime=10;
 
+    protected ChatMediator mediator;
+
     protected List<string> attributes = new List<string>();
     public abstract void dismiss();
+    public void send(string message)
+    {
+        Console.WriteLine("[" + this.name + "]" + DateTime.Now.ToString() + " sent message: " + message);
+        if(mediator != null)
+        {
+            mediator.sendMessage(this, message);
+        }
+    }
+    public void receiveMessage(string message)
+    {
+        Console.WriteLine("[" + this.name + "]" + DateTime.Now.ToString() + " received message: " + message);
+    }
+
+
 
     public void addAtribute(string attribute)
     {
@@ -39,6 +57,10 @@ public abstract class AbstractCloneableMinion : AbstractMinionPosition, ICloneab
     public abstract void setLifepoints(int points);
 
     public abstract void SetStatus(String status);
+    public void setMediator(ChatMediator CM)
+    {
+        mediator = CM;
+    }
 
     public abstract void respawn(int x, int y);
 

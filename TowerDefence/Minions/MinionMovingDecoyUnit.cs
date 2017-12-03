@@ -10,13 +10,14 @@ namespace TowerDefence.Minions
     {
         private MinionDecoyBoss Boss;
 
-      public MinionMovingDecoyUnit(string name, int lifepoints, string status, MinionDecoyBoss ml)
+      public MinionMovingDecoyUnit(string name, int lifepoints, string status, MinionDecoyBoss ml,ChatMediator CM)
         {
             setName(name);
             setLifepoints(lifepoints);
             SetStatus(status);
             setMinionLeader(ml);
-  
+            setMediator(CM);
+
         }
 
         public override void dismiss()

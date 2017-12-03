@@ -18,13 +18,13 @@ public class MinionFixerUnit : AbstractCloneableMinion
         return true;
 	}
 	
-	public MinionFixerUnit( string name, int lifepoints, string status, MinionFixerBoss ml )
+	public MinionFixerUnit( string name, int lifepoints, string status, MinionFixerBoss ml ,ChatMediator CM)
 	{
         setName(name);
         setLifepoints(lifepoints);
         SetStatus(status);
         setMinionLeader(ml);
- 
+        setMediator(CM);
     }
    
 

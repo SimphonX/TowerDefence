@@ -24,8 +24,10 @@ namespace TowerDefence.Minions
             int tower = getTowerWithLeastLp();
             for (Iterator iter = minions.getIterator(); iter.hasNext();)
             {
+                if(iter.next().GetType()== typeof(MinionFixerUnit)) { 
                 MinionFixerUnit m = (MinionFixerUnit)iter.next();
                 m.receiveCommand("StartFixing");
+                }
             }
           
 

@@ -11,6 +11,7 @@ namespace TowerDefence.Main.ChainOfResponsibilities
     {
         static MinionDecoyBoss JerryBoss = MinionDecoyBoss.getInstance();  //Sukuriam defenderių bosą
         static MinionFixerBoss LarryBoss = MinionFixerBoss.getInstance();  //Sukuriam fixerių bosą
+        static ChatRoom CM = new ChatRoom(); //Mediatorius komunikacijai
         public override void ExecuteModule(string Request)
         {
             if(Request=="MinionsDefend")   //StartDefenders
@@ -36,13 +37,18 @@ namespace TowerDefence.Main.ChainOfResponsibilities
         public static void MinionFixersDoSmthng()
         {
             MinionFixerConveyor FixerConveyor = new MinionFixerConveyor();
-            MinionFixerUnit fixer = (MinionFixerUnit)FixerConveyor.BuildMinion("Fixer", "MinionFixer_Nr1", 100, "Ready", LarryBoss);
+            MinionFixerUnit fixer = (MinionFixerUnit)FixerConveyor.BuildMinion("Fixer", "MinionFixer_Nr1", 100, "Ready", LarryBoss, CM);
             MinionFixerUnit fixerClone = (MinionFixerUnit)fixer.createClone();
             fixerClone.setName("FixerCloneNr1");
             MinionFixerUnit fixerClone2 = (MinionFixerUnit)fixer.createClone();
             fixerClone2.setName("FixerCloneNr2");
             MinionFixerUnit fixerClone3 = (MinionFixerUnit)fixer.createClone();
             fixerClone3.setName("FixerCloneNr3");
+            fixerClone3.send("Taking fire need assistance");
+            CM.addMinion(fixer);
+            CM.addMinion(fixerClone);
+            CM.addMinion(fixerClone2);
+            CM.addMinion(fixerClone3);
             LarryBoss.addMinion(fixer);
             LarryBoss.addMinion(fixerClone);
             LarryBoss.addMinion(fixerClone2);
@@ -53,14 +59,20 @@ namespace TowerDefence.Main.ChainOfResponsibilities
 
         public static void MinionDecoysDefend()
         {
+           
             MinionMovingDecoyConveyor MovingDecoyConveyor = new MinionMovingDecoyConveyor();
             MinionStandingDecoyConveyor StandingDecoyConveyor = new MinionStandingDecoyConveyor();
-            MinionMovingDecoyUnit movingDecoy = (MinionMovingDecoyUnit)MovingDecoyConveyor.BuildMinion("MovingDecoy", "MinionMovingDecoy_Nr1", 100, "Ready", JerryBoss);
+            MinionMovingDecoyUnit movingDecoy = (MinionMovingDecoyUnit)MovingDecoyConveyor.BuildMinion("MovingDecoy", "MinionMovingDecoy_Nr1", 100, "Ready", JerryBoss, CM);
             MinionMovingDecoyUnit movingDecoyClone = (MinionMovingDecoyUnit)movingDecoy.createClone();
             movingDecoyClone.setName("MovingDecoyClone");
-            MinionStandingDecoyUnit standingDecoy = (MinionStandingDecoyUnit)StandingDecoyConveyor.BuildMinion("StandingDecoy", "MinionStandingDecoy_Nr1", 100, "Ready", JerryBoss);
+            MinionStandingDecoyUnit standingDecoy = (MinionStandingDecoyUnit)StandingDecoyConveyor.BuildMinion("StandingDecoy", "MinionStandingDecoy_Nr1", 100, "Ready", JerryBoss, CM);
             MinionStandingDecoyUnit standingDecoyClone = (MinionStandingDecoyUnit)standingDecoy.createClone();
             standingDecoyClone.setName("StandingDecoyClone");
+            CM.addMinion(movingDecoy);
+            CM.addMinion(movingDecoyClone);
+            CM.addMinion(standingDecoy);
+            CM.addMinion(standingDecoyClone);
+            movingDecoyClone.send("Roger that");
             JerryBoss.addMinion(movingDecoy);
             JerryBoss.addMinion(movingDecoyClone);
             JerryBoss.addMinion(standingDecoy);

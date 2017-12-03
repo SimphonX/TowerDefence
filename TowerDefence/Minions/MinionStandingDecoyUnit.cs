@@ -11,12 +11,12 @@ public class MinionStandingDecoyUnit : AbstractCloneableMinion
     private MinionDecoyBoss Boss;
 
 
-   public MinionStandingDecoyUnit(string name, int lifepoints, string status, MinionDecoyBoss ml)
+   public MinionStandingDecoyUnit(string name, int lifepoints, string status, MinionDecoyBoss ml,ChatMediator CM)
     {
         setName(name);
         setLifepoints(lifepoints);
         SetStatus(status);
- 
+        setMediator(CM);
         setMinionLeader(ml);
     }
     public void moveToPoint(int x, int y)

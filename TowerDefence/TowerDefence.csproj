@@ -80,6 +80,8 @@
     <Compile Include="Minions\AbstractMinionConveyor.cs" />
     <Compile Include="Minions\AbstractMinionLeader.cs" />
     <Compile Include="Minions\AbstractMinionPosition.cs" />
+    <Compile Include="Minions\ChatMediator.cs" />
+    <Compile Include="Minions\ChatRoom.cs" />
     <Compile Include="Minions\Container.cs" />
     <Compile Include="Minions\IMinion.cs" />
     <Compile Include="Minions\Iterator.cs" />

@@ -9,24 +9,24 @@ namespace TowerDefence.Minions
     public abstract class AbstractMinionConveyor
     {
        protected AbstractCloneableMinion minion;
-        public AbstractCloneableMinion BuildMinion(string minionType,string name, int lifepoints,string status,AbstractMinionLeader ml)
+        public AbstractCloneableMinion BuildMinion(string minionType,string name, int lifepoints,string status,AbstractMinionLeader ml,ChatMediator CM)
         {
             switch(minionType)
             {
                 case "Fixer":
                     {
-                        minion = new MinionFixerUnit(name, lifepoints, status, (MinionFixerBoss)ml);
+                        minion = new MinionFixerUnit(name, lifepoints, status, (MinionFixerBoss)ml,CM);
                         break;
                     }
                 case "StandingDecoy":
                     {
-                        minion = new MinionStandingDecoyUnit(name, lifepoints, status, (MinionDecoyBoss)ml);
+                        minion = new MinionStandingDecoyUnit(name, lifepoints, status, (MinionDecoyBoss)ml,CM);
                         break;
                     }
                     
                 case "MovingDecoy":
                     {
-                        minion = new MinionMovingDecoyUnit(name, lifepoints, status, (MinionDecoyBoss)ml);
+                        minion = new MinionMovingDecoyUnit(name, lifepoints, status, (MinionDecoyBoss)ml,CM);
                         break;
                     }
             }
