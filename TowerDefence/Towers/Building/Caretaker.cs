@@ -1,16 +1,33 @@
-/**
- * @(#) Caretaker.cs
- */
 
+
+using System;
+/**
+* @(#) Caretaker.cs
+*/
 namespace towers_classes
 {
 	public class Caretaker
 	{
-        Memento memento;
-        public Memento Memento
+        private Memento backup;
+        private AbstractTower tower;
+
+        public Caretaker( AbstractTower tower )
         {
-            get { return memento; }
-            set { memento = value; }
+            this.tower = tower;
+        }
+
+        public void backupState( )
+        {
+            backup = tower.backupState();
+        }
+
+        public void restoreState( )
+        {
+            if (backup != null)
+            {
+                Console.WriteLine("Restoring tower's " + this.tower.GetType().Name + " state");
+                backup.restore();
+            }
         }
 	}
 	
