@@ -6,7 +6,13 @@ namespace towers_classes
 {
 	public abstract class LevelState
 	{
-        public abstract void Handle(AbstractTower tower);
+        protected AbstractTower context;
+        public LevelState(AbstractTower tower)
+        {
+            context = tower;
+        }
+        public abstract int Handle();
+        public abstract LevelState upgrade();
 	}
 	
 }

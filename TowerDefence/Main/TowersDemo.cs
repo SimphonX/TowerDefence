@@ -18,6 +18,20 @@ namespace TowerDefence.Main
             {
             }
             testShot = null;
+            //State & Caretaker demo 
+            testTower1.upgrade();
+            testTower1.fire(3, 5);
+            testTower1.upgrade();
+            testTower1.upgrade();
+            Caretaker caretaker = new Caretaker(testTower1);
+            caretaker.backupState();
+            testTower1.destroy();
+            testTower1.fire(5, 3);
+
+            caretaker.restoreState();
+            testTower1.fire(6, 7);
+
+
         }
     }
 }

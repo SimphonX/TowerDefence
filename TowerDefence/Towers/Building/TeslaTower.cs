@@ -17,18 +17,7 @@ namespace towers_classes
         public override AbstractProjectileContainer fire(int x, int y)
         {
             AbstractProjectileContainer projectile;
-            switch (this.state.GetType().Name)
-            {
-                case "Level 1":
-                    projectile = this.prepareShot(x, y, this.damage * 1);
-                    break;
-                case "Level 2":
-                    projectile = this.prepareShot(x, y, this.damage * 2);
-                    break;
-                default:
-                    projectile = this.prepareShot(x, y, this.damage * 3);
-                    break;
-            }
+            projectile = this.prepareShot(x, y, this.state.Handle());
             Console.WriteLine(this.GetType().Name + " fired at target, at: X:" + x + "; Y:" + y +". With projectile effects: "+String.Join(",",projectile.getEffects()));
             return projectile;
         }
